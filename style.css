@@ -1,3 +1,8 @@
+@media (max-width: 768px) {
+    html {
+        scroll-padding-top: 70px; /* Adjust this value based on your navbar height */
+    }
+}
 /* Basic styling */
 body {
     font-family: 'Arial', sans-serif;
