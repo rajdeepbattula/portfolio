@@ -209,7 +209,7 @@
     </div>
 </section>
 
-<footer class="bg-dark py-3 mt-5">
+<footer id="contact" class="bg-dark py-3 mt-5">
     <div class="contactdetails">
         <ul>
             <li>
@@ -246,6 +246,13 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+<script>
+    document.querySelector('a[href="#contact"]').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector('#contact').scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+</script>
 </body>
 </html>
