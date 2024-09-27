@@ -41,7 +41,24 @@ header h2 {
 .card-body {
     padding: 20px;
 }
+.contactdetails {
+    text-align: center;
+    margin: 20px auto;
+}
 
+.contactdetails ul {
+    padding: 0;
+    list-style: none;
+}
+
+.contactdetails li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.contactdetails .fa-stack {
+    font-size: 1.5em; /* Adjust this value to change icon size */
+}
 /* Footer styling */
 footer {
     background-color: #333;
