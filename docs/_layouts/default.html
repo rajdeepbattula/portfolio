@@ -2,11 +2,564 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bala Akhil Rajdeep Battula - Portfolio</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    {{ content }}
-    <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <span id="quote-display"></span>&nbsp;&nbsp;&nbsp;
+        <a class="navbar-brand" href="#">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About Me</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#education">Education</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#certifications">Certifications</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#experience">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="bg-primary text-white text-center py-5">
+    <img src="images/bbattula-profile-picture.jpg" alt="Bala Akhil Rajdeep Batttula" class="rounded-circle" style="width: 150px; height: 150px;">
+    <div class="container">
+        <h1>Bala Akhil Rajdeep Battula</h1>
+        <p class="lead">Results-Driven Data Engineer & Data Science Researcher</p>
+    </div>
+</header>
+
+<section id="about" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">About me</h2>
+        <p class="lead text-center">Highly motivated and experienced data professional with a strong background in data analysis, visualization, and engineering. Proven expertise in streamlining ETL workflows, developing data collection and visualization tools using Python and R, and creating advanced reports with Tableau. Passionate about leveraging data insights to inform business decisions and drive growth in the field of Data Science.</p>
+    </div>
+</section>
+
+<section id="education" class="bg-light py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Education</h2>
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Indiana University, SOIC, Indianapolis, IN</h5>
+                <p class="card-text">Masters, Applied Data Science | Aug 2021 - Dec 2022</p>
+            </div>
+        </div>
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Vignan Institute Of Information Technology, India</h5>
+                <p class="card-text">Bachelor of Technology, Computer Science | Sep 2014 - Apr 2018</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="skills" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Skills</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <h4>Programming Languages</h4>
+                <ul>
+                    <li>Python</li>
+                    <li>SQL</li>
+                    <li>JavaScript</li>
+                    <li>TypeScript</li>
+                    <li>C++</li>
+                    <li>Java</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>C#</li>
+                    <li>R Programming</li>
+                    <li>TensorFlow</li>
+                    <li>C</li>
+                    <li>R</li>
+                    <li>Web Development</li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h4>Data Management Tools</h4>
+                <ul>
+                    <li>Tableau</li>
+                    <li>Salesforce</li>
+                    <li>SQL Server</li>
+                    <li>SAS</li>
+                    <li>Microsoft Power BI</li>
+                    <li>Looker</li>
+                    <li>DAX</li>
+                    <li>Natural Language Processing</li>
+                    <li>SPSS</li>
+                    <li>Redis</li>
+                    <li>PySpark</li>
+                    <li>Qlikview</li>
+                    <li>ETL</li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h4>Frameworks & Tools</h4>
+                <ul>
+                    <li>ASP.NET MVC</li>
+                    <li>.NET</li>
+                    <li>EF ORM</li>
+                    <li>Angular</li>
+                    <li>Apache Spark</li>
+                    <li>GitHub</li>
+                    <li>APIs</li>
+                    <li>AWS</li>
+                    <li>RDBMS</li>
+                    <li>Kubernetes</li>
+                    <li>Docker</li>
+                    <li>Webpack</li>
+                    <li>Node.js</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+    
+<section id="projects" class="bg-light py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Projects</h2>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Loan Insights</h5>
+                        <p class="card-text">To identify areas of strength and weakness for the business strategy team.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Hotel Operations</h5>
+                        <p class="card-text">Calculate the average and maximum duration for each branch and service.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Grocery Store Sales</h5>
+                        <p class="card-text">To make sure it keeps stocking products in all categories that cover a range of prices to ensure they have stock for a broad range of customers.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">House Sales</h5>
+                        <p class="card-text">Predicting the sale price of a house given its characteristics.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Spectrum Shades LLC</h5>
+                        <p class="card-text">Providing actionable insights to help Spectrum Shades LLC address the issues of inconsistent color quality and improve customer satisfaction.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Sales Strategy Analysis for New Office Stationery Line</h5>
+                        <p class="card-text">To evaluate the efficiency of these sales approaches and make the best suggestions for future sales strategies.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="certifications" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Certifications</h2>
+        <div class="cert-slider">
+            <div>
+                <button class="cert-prev-btn" onclick="slidePrev()">
+                    <i class="fa fa-chevron-left"></i>
+                </button>
+            </div>
+            <div class="cert-track">
+                <div class="cert-item">
+                    <img src="images/datacamp-logo.png" alt="DataCamp" class="cert-logo">
+                    <h5>Data Scientist Associate</h5>
+                    <p>DataCamp</p>
+                </div>
+                <div class="cert-item">
+                    <img src="images/datacamp-logo.png" alt="DataCamp" class="cert-logo">
+                    <h5>Data Engineer</h5>
+                    <p>DataCamp</p>
+                </div>
+                <div class="cert-item">
+                    <img src="images/datacamp-logo.png" alt="DataCamp" class="cert-logo">
+                    <h5>SQL Associate</h5>
+                    <p>DataCamp</p>
+                </div>
+                <div class="cert-item">
+                    <img src="images/datacamp-logo.png" alt="DataCamp" class="cert-logo">
+                    <h5>Data Engineer Associate</h5>
+                    <p>DataCamp</p>
+                </div>
+                <div class="cert-item">
+                    <img src="images/datacamp-logo.png" alt="DataCamp" class="cert-logo">
+                    <h5>Data Analyst Associate</h5>
+                    <p>DataCamp</p>
+                </div>
+                <div class="cert-item">
+                    <img src="images/microsoft-linkedin-logo.png" alt="Microsoft and LinkedIn" class="cert-logo">
+                    <h5>Career Essentials in Project Management</h5>
+                    <p>Microsoft and LinkedIn</p>
+                </div>
+                <div class="cert-item">
+                    <img src="images/microsoft-linkedin-logo.png" alt="Microsoft and LinkedIn" class="cert-logo">
+                    <h5>Career Essentials in Data Analysis</h5>
+                    <p>Microsoft and LinkedIn</p>
+                </div>
+                <div class="cert-item">
+                    <img src="images/hackerrank-logo.png" alt="HackerRank" class="cert-logo">
+                    <h5>Software Engineer</h5>
+                    <p>HackerRank</p>
+                </div>
+                <div class="cert-item">
+                    <img src="images/hackerrank-logo.png" alt="HackerRank" class="cert-logo">
+                    <h5>Frontend Developer</h5>
+                    <p>HackerRank</p>
+                </div>
+                <div class="cert-item">
+                    <img src="images/hackerrank-logo.png" alt="HackerRank" class="cert-logo">
+                    <h5>Problem Solving</h5>
+                    <p>HackerRank</p>
+                </div>
+                <div class="cert-item">
+                    <img src="images/hackerrank-logo.png" alt="HackerRank" class="cert-logo">
+                    <h5>SQL (Advanced)</h5>
+                    <p>HackerRank</p>
+                </div>
+                <div class="cert-item">
+                    <img src="images/project-management-institute-logo.png" alt="Project Management Institute" class="cert-logo">
+                    <h5>Project Management Foundations</h5>
+                    <p>Project Management Institute</p>
+                </div>
+                <div class="cert-item">
+                    <img src="images/infosys-logo.png" alt="Infosys" class="cert-logo">
+                    <h5>Python for Data Science</h5>
+                    <p>Infosys</p>
+                </div>
+                <div class="cert-item">
+                    <img src="images/infosys-logo.png" alt="Infosys" class="cert-logo">
+                    <h5>Essentials Of Cloud Computing</h5>
+                    <p>Infosys</p>
+                </div>
+                <div class="cert-item">
+                    <img src="images/linkedin-logo.png" alt="LinkedIn" class="cert-logo">
+                    <h5>Learning the R Tidyverse</h5>
+                    <p>LinkedIn</p>
+                </div>
+                <div class="cert-item">
+                    <img src="images/linkedin-logo.png" alt="LinkedIn" class="cert-logo">
+                    <h5>Introduction to Career Skills in Data Analytics</h5>
+                    <p>LinkedIn</p>
+                </div>
+                <div class="cert-item">
+                    <img src="images/linkedin-logo.png" alt="LinkedIn" class="cert-logo">
+                    <h5>Data Analytics: Extending and Applying Core Knowledge</h5>
+                    <p>LinkedIn</p>
+                </div>
+                <div class="cert-item">
+                    <img src="images/linkedin-logo.png" alt="LinkedIn" class="cert-logo">
+                    <h5>Data Analytics: Foundations</h5>
+                    <p>LinkedIn</p>
+                </div>
+                <div class="cert-item">
+                    <img src="images/project-management-institute-logo.png" alt="Project Management Institute" class="cert-logo">
+                    <h5>Managing Projects with Microsoft 365</h5>
+                    <p>Project Management Institute</p>
+                </div>
+                <div class="cert-item">
+                    <img src="images/project-management-institute-logo.png" alt="Project Management Institute" class="cert-logo">
+                    <h5>Managing Project Stakeholders</h5>
+                    <p>Project Management Institute</p>
+                </div>
+                <div class="cert-item">
+                    <img src="images/linkedin-logo.png" alt="LinkedIn" class="cert-logo">
+                    <h5>Collaborating with Microsoft 365</h5>
+                    <p>LinkedIn</p>
+                </div>
+                <div class="cert-item">
+                    <img src="images/linkedin-logo.png" alt="LinkedIn" class="cert-logo">
+                    <h5>Optimizing Your Work with Microsoft 365</h5>
+                    <p>LinkedIn</p>
+                </div>
+                <div class="cert-item">
+                    <img src="images/citi-program-logo.png" alt="CITI Program" class="cert-logo">
+                    <h5>Social/Behavioral Researchers</h5>
+                    <p>CITI Program</p>
+                </div>
+                <div class="cert-item">
+                    <img src="images/citi-program-logo.png" alt="CITI Program" class="cert-logo">
+                    <h5>Social and Behavioral Responsible Conduct of Research</h5>
+                    <p>CITI Program</p>
+                </div>
+            </div>
+            <div>
+                <button class="cert-next-btn" onclick="slideNext()">
+                    <i class="fa fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="cert-dots-container">
+                <div class="cert-dots">
+                    <!-- Dots will be added dynamically via JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="experience" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Experience</h2>
+        <div class="row">
+            <div class="col-md-12 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Senior Developer - Equini</h5>
+                        <p class="card-text">Jan 2023 - Present | Remote</p>
+                        <ul>
+                            <li>Led cross-functional teams to integrate complex system functionalities using ASP.NET MVC and Angular, ensuring alignment with industry standards and resulting in improved system efficiency and user satisfaction.</li>
+                            <li>Identified new opportunities for organizational growth and advocated for necessary staffing needs, which led to the redesign of features using JavaScript and AWS, resulting in easy-to-use products and improved customer workflows.</li>
+                            <li>Customized machine learning methods to optimize performance across modern parallel environments, including distributed clusters and GPUs, which enhanced processing speed and accuracy.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Data Engineer - The Polis Center at IUPUI</h5>
+                        <p class="card-text">Aug 2021 - Dec 2022 | Indianapolis, IN</p>
+                        <ul>
+                            <li>Streamlined ETL workflows to optimize center projects, enabling efficient dataset migration and improving data quality and reliability. Contributed to developing, testing, and integrating ETL routines, including geospatial data processing.</li>
+                            <li>Configured SSIS packages for scheduled data loads from source systems to target tables, improving data transfer efficiency and accuracy.</li>
+                            <li>Developed tools in Python and R for collecting, cleaning, and visualizing the Social Vulnerability Index (SVI) and Townshend Derivation Index across Indiana’s zip codes, resulting in improved data insights. Created on-demand reports and data visualizations using MySQL, SAS, MS Access, Python, DHIS2, and R. Implemented a Python script to analyze PUMS data and generate State of Aging Report (SOAR) variables, enhancing data accessibility and reporting.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer id="contact" class="bg-dark py-3 mt-5">
+    <div class="contactdetails">
+        <ul>
+            <li>
+                <a href="https://www.linkedin.com/in/balaakhilrajdeepbattula/" target="_blank">
+                    <span class="fa-stack">
+                        <i class="fa fa-circle fa-stack-2x" style="color:navy"></i>
+                        <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="mailto:rajdeepbattula@gmail.com" target="_blank">
+                    <span class="fa-stack">
+                        <i class="fa fa-circle fa-stack-2x" style="color:olive"></i>
+                        <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/rajdeepbattula" target="_blank">
+                    <span class="fa-stack">
+                        <i class="fa fa-circle fa-stack-2x" style="color:purple"></i>
+                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="container text-center">
+        <p class="text-white">&copy; 2024 Bala Akhil Rajdeep Batttula</p>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="quotes.js"></script>
+<script src="script.js"></script>
+<script>
+    // Smooth scrolling for all navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const section = document.querySelector(this.getAttribute('href'));
+            const navHeight = document.querySelector('.navbar').offsetHeight;
+            const targetPosition = section.offsetTop - navHeight;
+    
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+    
+            // Close mobile menu if open
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            if (navbarCollapse.classList.contains('show')) {
+                navbarCollapse.classList.remove('show');
+            }
+        });
+    });
+    
+    // Add active state to navigation items
+    function updateActiveNavItem() {
+        const sections = document.querySelectorAll('section');
+        const navItems = document.querySelectorAll('.nav-link');
+        
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= sectionTop - 150) {
+                current = section.getAttribute('id');
+            }
+        });
+    
+        navItems.forEach(item => {
+            item.classList.remove('active');
+            if (item.getAttribute('href').slice(1) === current) {
+                item.classList.add('active');
+            }
+        });
+    }
+    
+    // Update active nav item on scroll
+    window.addEventListener('scroll', updateActiveNavItem);
+</script>
+<script>
+   const track = document.querySelector('.cert-track');
+    const items = document.querySelectorAll('.cert-item');
+    const dotsContainer = document.querySelector('.cert-dots');
+    let currentIndex = 0;
+    let autoSlide;
+    
+    function createDots() {
+        const totalSlides = items.length;
+        const maxDots = Math.min(3, Math.ceil(totalSlides / 3));
+    
+        dotsContainer.innerHTML = ''; // Clear existing dots
+    
+        for (let i = 0; i < maxDots; i++) {
+            const dot = document.createElement('span');
+            dot.classList.add('cert-dot');
+    
+            if (i === 0) dot.classList.add('active');
+    
+            dot.addEventListener('click', () => {
+                const itemsPerGroup = Math.floor(totalSlides / maxDots);
+                currentIndex = i * itemsPerGroup;
+                updateSlidePosition();
+                updateDots();
+            });
+    
+            dotsContainer.appendChild(dot);
+        }
+    }
+    
+    function updateDots() {
+        const dots = document.querySelectorAll('.cert-dot');
+        const totalSlides = items.length;
+        const maxDots = dots.length;
+        const itemsPerGroup = Math.floor(totalSlides / maxDots);
+    
+        dots.forEach((dot, index) => {
+            const isActive = currentIndex >= index * itemsPerGroup && 
+                             currentIndex < (index + 1) * itemsPerGroup;
+            dot.classList.toggle('active', isActive);
+        });
+    }
+    
+    function slideNext() {
+        const totalSlides = items.length;
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateSlidePosition();
+        updateDots();
+    }
+    
+    function slidePrev() {
+        const totalSlides = items.length;
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateSlidePosition();
+        updateDots();
+    }
+    
+    function updateSlidePosition() {
+        const itemWidth = items[0].offsetWidth + 20; // Include margin
+        track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+    }
+    
+    function initCertificationSlider() {
+        createDots();
+        autoSlide = setInterval(slideNext, 5000);
+    }
+    
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', initCertificationSlider);
+    
+    // Pause auto-sliding on hover
+    track.addEventListener('mouseenter', () => clearInterval(autoSlide));
+    track.addEventListener('mouseleave', () => {
+        autoSlide = setInterval(slideNext, 5000);
+    });
+    
+    // Touch support
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    track.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+    });
+    
+    track.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].clientX;
+        handleSwipe();
+    });
+    
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const difference = touchStartX - touchEndX;
+    
+        if (Math.abs(difference) > swipeThreshold) {
+            difference > 0 ? slideNext() : slidePrev();
+        }
+    }
+</script>
 </body>
 </html>
