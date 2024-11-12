@@ -415,38 +415,59 @@
     const items = document.querySelectorAll('.cert-item');
     const dotsContainer = document.querySelector('.cert-dots');
     let currentIndex = 0;
+    let autoSlide;
     
-    // Create dots
+    // Create dots with limited visibility
     function createDots() {
-        for (let i = 0; i < items.length - 2; i++) {
+        const totalSlides = items.length - 2;
+        const maxDots = 3;
+        
+        dotsContainer.innerHTML = ''; // Clear existing dots
+        
+        for (let i = 0; i < maxDots; i++) {
             const dot = document.createElement('span');
             dot.classList.add('cert-dot');
+            
+            // Add active state to first dot initially
             if (i === 0) dot.classList.add('active');
+            
             dot.addEventListener('click', () => {
-                currentIndex = i;
+                // Calculate the actual slide based on the dot position
+                const slideMultiplier = Math.floor(totalSlides / maxDots);
+                currentIndex = i * slideMultiplier;
                 updateSlidePosition();
                 updateDots();
             });
+            
             dotsContainer.appendChild(dot);
         }
     }
     
-    // Update active dot
     function updateDots() {
         const dots = document.querySelectorAll('.cert-dot');
+        const totalSlides = items.length - 2;
+        const maxDots = 3;
+        const slideMultiplier = Math.floor(totalSlides / maxDots);
+        
         dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === currentIndex);
+            // Calculate the active state based on current index
+            const isActive = currentIndex >= index * slideMultiplier && 
+                             currentIndex < (index + 1) * slideMultiplier;
+            
+            dot.classList.toggle('active', isActive);
         });
     }
     
     function slideNext() {
-        currentIndex = (currentIndex + 1) % (items.length - 2);
+        const totalSlides = items.length - 2;
+        currentIndex = (currentIndex + 1) % totalSlides;
         updateSlidePosition();
         updateDots();
     }
     
     function slidePrev() {
-        currentIndex = (currentIndex - 1 + items.length - 2) % (items.length - 2);
+        const totalSlides = items.length - 2;
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
         updateSlidePosition();
         updateDots();
     }
@@ -455,13 +476,18 @@
         track.style.transform = `translateX(-${currentIndex * 320}px)`;
     }
     
-    // Initialize dots
-    createDots();
+    // Initialize
+    function initCertificationSlider() {
+        createDots();
+        
+        // Auto slide every 5 seconds
+        autoSlide = setInterval(slideNext, 5000);
+    }
     
-    // Auto slide every 5 seconds
-    setInterval(slideNext, 5000);
+    // Call initialization
+    initCertificationSlider();
     
-    // Optional: Pause auto-sliding when hovering over certificates
+    // Pause auto-sliding on hover
     track.addEventListener('mouseenter', () => {
         clearInterval(autoSlide);
     });
@@ -470,7 +496,7 @@
         autoSlide = setInterval(slideNext, 5000);
     });
     
-    // Optional: Add touch support for mobile devices
+    // Touch support
     let touchStartX = 0;
     let touchEndX = 0;
     
