@@ -322,8 +322,9 @@
             </div>
         </div>
         <div class="cert-controls">
-            <button onclick="slidePrev()">Previous</button>
-            <button onclick="slideNext()">Next</button>
+            <div class="cert-dots">
+                <!-- Dots will be added dynamically via JavaScript -->
+            </div>
         </div>
     </div>
 </section>
@@ -412,24 +413,88 @@
 <script>
     const track = document.querySelector('.cert-track');
     const items = document.querySelectorAll('.cert-item');
+    const dotsContainer = document.querySelector('.cert-dots');
     let currentIndex = 0;
-
+    
+    // Create dots
+    function createDots() {
+        for (let i = 0; i < items.length - 2; i++) {
+            const dot = document.createElement('span');
+            dot.classList.add('cert-dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => {
+                currentIndex = i;
+                updateSlidePosition();
+                updateDots();
+            });
+            dotsContainer.appendChild(dot);
+        }
+    }
+    
+    // Update active dot
+    function updateDots() {
+        const dots = document.querySelectorAll('.cert-dot');
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+    }
+    
     function slideNext() {
         currentIndex = (currentIndex + 1) % (items.length - 2);
         updateSlidePosition();
+        updateDots();
     }
-
+    
     function slidePrev() {
         currentIndex = (currentIndex - 1 + items.length - 2) % (items.length - 2);
         updateSlidePosition();
+        updateDots();
     }
-
+    
     function updateSlidePosition() {
         track.style.transform = `translateX(-${currentIndex * 320}px)`;
     }
-
+    
+    // Initialize dots
+    createDots();
+    
     // Auto slide every 5 seconds
     setInterval(slideNext, 5000);
+    
+    // Optional: Pause auto-sliding when hovering over certificates
+    track.addEventListener('mouseenter', () => {
+        clearInterval(autoSlide);
+    });
+    
+    track.addEventListener('mouseleave', () => {
+        autoSlide = setInterval(slideNext, 5000);
+    });
+    
+    // Optional: Add touch support for mobile devices
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    track.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+    });
+    
+    track.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].clientX;
+        handleSwipe();
+    });
+    
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const difference = touchStartX - touchEndX;
+    
+        if (Math.abs(difference) > swipeThreshold) {
+            if (difference > 0) {
+                slideNext();
+            } else {
+                slidePrev();
+            }
+        }
+    }
 </script>
 </body>
 </html>
