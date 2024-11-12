@@ -1,1 +1,206 @@
+@media (max-width: 768px) {
+    html {
+        scroll-padding-top: 70px; /* Adjust this value based on your navbar height */
+    }
+}
+/* Basic styling */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header styling */
+header {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+header h2 {
+    font-size: 1.5em;
+}
+
+/* Project card styling */
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card-body {
+    padding: 20px;
+}
+.contactdetails {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.contactdetails ul {
+    padding: 0;
+    list-style: none;
+}
+
+.contactdetails li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.contactdetails .fa-stack {
+    font-size: 1.5em; /* Adjust this value to change icon size */
+}
+
+.nav-link.active {
+    color: #007bff !important;
+    font-weight: 500;
+}
+
+/* Optional: Add hover effect */
+.nav-link:hover {
+    color: #0056b3 !important;
+}
+
+/* Ensure proper spacing in mobile view */
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        padding: 1rem 0;
+    }
+    
+    .nav-item {
+        padding: 0.5rem 0;
+    }
+}
+
+.cert-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+/* Updated CSS */
+.cert-slider {
+    position: relative;
+    overflow: hidden;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.cert-prev-btn, .cert-next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 123, 255, 0.7);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+}
+
+.cert-prev-btn {
+    left: 10px;
+}
+
+.cert-next-btn {
+    right: 10px;
+}
+
+.cert-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    overflow: hidden;
+}
+
+.cert-item {
+    flex: 0 0 300px;
+    padding: 20px;
+    margin: 0 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.cert-dots-container {
+    position: relative;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.cert-dots {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.cert-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cert-dot.active {
+    background-color: #007bff;
+    transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+    .cert-slider {
+        padding: 20px 0;
+    }
+    .cert-prev-btn, .cert-next-btn {
+        font-size: 16px;
+    }
+    .cert-item {
+        flex: 0 0 250px;
+        padding: 15px;
+        margin: 0 5px;
+    }
+    .cert-dots-container {
+        bottom: 10px;
+    }
+    .cert-dot {
+        width: 8px;
+        height: 8px;
+        margin: 0 3px;
+    }
+    .cert-dot.active {
+        transform: scale(1.1);
+    }
+}
+
+/* Footer styling */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
 
