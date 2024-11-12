@@ -107,37 +107,65 @@ header h2 {
     cursor: pointer;
 }
 
-.cert-dots-container {
-    display: flex;
-    justify-content: center;
+.cert-slider {
+    position: relative;
     overflow: hidden;
-    width: 100%;
+    padding: 40px 0;
+    text-align: center; /* Center align the slider content */
 }
 
-.cert-dots {
+.cert-dots-container {
+    position: absolute;
+    bottom: 20px; /* Adjust this value to position dots vertically */
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 200px; /* Adjust as needed */
+    width: 100%;
+    padding: 10px 0;
+}
+
+.cert-dots {
+    display: inline-flex; /* Changed to inline-flex */
+    justify-content: center;
+    align-items: center;
+    gap: 8px; /* Space between dots */
 }
 
 .cert-dot {
     width: 10px;
     height: 10px;
-    margin: 0 5px;
     border-radius: 50%;
     background-color: #e0e0e0;
     cursor: pointer;
     transition: all 0.3s ease;
+    margin: 0 5px;
+    border: none;
+    padding: 0;
 }
 
 .cert-dot.active {
     background-color: #007bff;
-    width: 12px;
-    height: 12px;
+    transform: scale(1.2); /* Slightly larger when active */
 }
 
+/* Hover effect */
+.cert-dot:hover {
+    background-color: #b0b0b0;
+}
+
+/* Make sure the track doesn't interfere with dots */
+.cert-track {
+    margin-bottom: 40px; /* Add space for dots */
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
+    .cert-dots-container {
+        bottom: 10px;
+    }
+    
     .cert-dot {
         width: 8px;
         height: 8px;
@@ -145,8 +173,7 @@ header h2 {
     }
 
     .cert-dot.active {
-        width: 10px;
-        height: 10px;
+        transform: scale(1.1);
     }
 }
 
