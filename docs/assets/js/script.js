@@ -30,122 +30,122 @@ document.addEventListener('DOMContentLoaded', function() {
     // Certification data
     const certifications = [
         {
-            logo: "./images/datacamp-logo.png",
+            logo: "/portfolio/images/datacamp-logo.png",
             title: "Data Scientist Associate",
             provider: "DataCamp"
         },
         {
-            logo: "./images/datacamp-logo.png",
+            logo: "/portfolio/images/datacamp-logo.png",
             title: "Data Engineer",
             provider: "DataCamp"
         },
         {
-            logo: "./images/datacamp-logo.png",
+            logo: "/portfolio/images/datacamp-logo.png",
             title: "SQL Associate",
             provider: "DataCamp"
         },
         {
-            logo: "./images/datacamp-logo.png",
+            logo: "/portfolio/images/datacamp-logo.png",
             title: "Data Engineer Associate",
             provider: "DataCamp"
         },
         {
-            logo: "./images/datacamp-logo.png",
+            logo: "/portfolio/images/datacamp-logo.png",
             title: "Data Analyst Associate",
             provider: "DataCamp"
         },
         {
-            logo: "./images/microsoft-linkedin-logo.png",
+            logo: "/portfolio/images/microsoft-linkedin-logo.png",
             title: "Career Essentials in Project Management",
             provider: "Microsoft and LinkedIn"
         },
         {
-            logo: "./images/microsoft-linkedin-logo.png",
+            logo: "/portfolio/images/microsoft-linkedin-logo.png",
             title: "Career Essentials in Data Analysis",
             provider: "Microsoft and LinkedIn"
         },
         {
-            logo: "./images/hackerrank-logo.png",
+            logo: "/portfolio/images/hackerrank-logo.png",
             title: "Software Engineer",
             provider: "HackerRank"
         },
         {
-            logo: "./images/hackerrank-logo.png",
+            logo: "/portfolio/images/hackerrank-logo.png",
             title: "Frontend Developer",
             provider: "HackerRank"
         },
         {
-            logo: "./images/hackerrank-logo.png",
+            logo: "/portfolio/images/hackerrank-logo.png",
             title: "Problem Solving",
             provider: "HackerRank"
         },
         {
-            logo: "./images/hackerrank-logo.png",
+            logo: "/portfolio/images/hackerrank-logo.png",
             title: "SQL (Advanced)",
             provider: "HackerRank"
         },
         {
-            logo: "./images/project-management-institute-logo.png",
+            logo: "/portfolio/images/project-management-institute-logo.png",
             title: "Project Management Foundations",
             provider: "Project Management Institute"
         },
         {
-            logo: "./images/infosys-logo.png",
+            logo: "/portfolio/images/infosys-logo.png",
             title: "Python for Data Science",
             provider: "Infosys"
         },
         {
-            logo: "./images/infosys-logo.png",
+            logo: "/portfolio/images/infosys-logo.png",
             title: "Essentials Of Cloud Computing",
             provider: "Infosys"
         },
         {
-            logo: "./images/linkedin-logo.png",
+            logo: "/portfolio/images/linkedin-logo.png",
             title: "Learning the R Tidyverse",
             provider: "LinkedIn"
         },
         {
-            logo: "./images/linkedin-logo.png",
+            logo: "/portfolio/images/linkedin-logo.png",
             title: "Introduction to Career Skills in Data Analytics",
             provider: "LinkedIn"
         },
         {
-            logo: "./images/linkedin-logo.png",
+            logo: "/portfolio/images/linkedin-logo.png",
             title: "Data Analytics: Extending and Applying Core Knowledge",
             provider: "LinkedIn"
         },
         {
-            logo: "./images/linkedin-logo.png",
+            logo: "/portfolio/images/linkedin-logo.png",
             title: "Data Analytics: Foundations",
             provider: "LinkedIn"
         },
         {
-            logo: "./images/project-management-institute-logo.png",
+            logo: "/portfolio/images/project-management-institute-logo.png",
             title: "Managing Projects with Microsoft 365",
             provider: "Project Management Institute"
         },
         {
-            logo: "./images/project-management-institute-logo.png",
+            logo: "/portfolio/images/project-management-institute-logo.png",
             title: "Managing Project Stakeholders",
             provider: "Project Management Institute"
         },
         {
-            logo: "./images/linkedin-logo.png",
+            logo: "/portfolio/images/linkedin-logo.png",
             title: "Collaborating with Microsoft 365",
             provider: "LinkedIn"
         },
         {
-            logo: "./images/linkedin-logo.png",
+            logo: "/portfolio/images/linkedin-logo.png",
             title: "Optimizing Your Work with Microsoft 365",
             provider: "LinkedIn"
         },
         {
-            logo: "./images/citi-program-logo.png",
+            logo: "/portfolio/images/citi-program-logo.png",
             title: "Social/Behavioral Researchers",
             provider: "CITI Program"
         },
         {
-            logo: "./images/citi-program-logo.png",
+            logo: "/portfolio/images/citi-program-logo.png",
             title: "Social and Behavioral Responsible Conduct of Research",
             provider: "CITI Program"
         }
