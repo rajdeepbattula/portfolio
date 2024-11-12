@@ -1,0 +1,4 @@
+# Sample _config.yml
+title: Your Site Title
+description: Your site description
+theme: jekyll-theme-minimal
