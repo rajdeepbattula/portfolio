@@ -108,6 +108,48 @@ font-size: 1.5em; /* Adjust this value to change icon size */
     cursor: pointer;
 }
 
+.cert-dots-container {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+}
+
+.cert-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 200px; /* Adjust as needed */
+}
+
+.cert-dot {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cert-dot.active {
+    background-color: #007bff;
+    width: 12px;
+    height: 12px;
+}
+
+@media (max-width: 768px) {
+    .cert-dot {
+        width: 8px;
+        height: 8px;
+        margin: 0 3px;
+    }
+
+    .cert-dot.active {
+        width: 10px;
+        height: 10px;
+    }
+}
 /* Footer styling */
 footer {
 background-color: #333;
