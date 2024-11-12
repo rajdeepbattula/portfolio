@@ -201,10 +201,10 @@
     <div class="container">
         <h2 class="text-center mb-4">Certifications</h2>
         <div class="cert-slider">
+            <button class="cert-prev-btn" onclick="slidePrev()">
+                <i class="fas fa-chevron-left"></i>
+            </button>
             <div class="cert-track">
-                <button class="cert-prev-btn" onclick="slidePrev()">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
                 <div class="cert-item">
                     <img src="images/datacamp-logo.png" alt="DataCamp" class="cert-logo">
                     <h5>Data Scientist Associate</h5>
@@ -326,13 +326,13 @@
                     <p>CITI Program</p>
                 </div>
             </div>
-        </div>
-        <button class="cert-next-btn" onclick="slideNext()">
-            <i class="fas fa-chevron-right"></i>
-        </button>
-        <div class="cert-dots-container">
-            <div class="cert-dots">
-                <!-- Dots will be added dynamically via JavaScript -->
+            <button class="cert-next-btn" onclick="slideNext()">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+             <div class="cert-dots-container">
+                <div class="cert-dots">
+                    <!-- Dots will be added dynamically via JavaScript -->
+                </div>
             </div>
         </div>
     </div>
@@ -466,24 +466,21 @@
     let currentIndex = 0;
     let autoSlide;
     
-    // Create dots with limited visibility
     function createDots() {
         const totalSlides = items.length;
-        const maxDots = 3;
+        const maxDots = Math.min(3, Math.ceil(totalSlides / 3)); // Limit dots
     
         dotsContainer.innerHTML = ''; // Clear existing dots
     
         for (let i = 0; i < maxDots; i++) {
             const dot = document.createElement('span');
             dot.classList.add('cert-dot');
-    
-            // Add active state to first dot initially
+            
             if (i === 0) dot.classList.add('active');
     
             dot.addEventListener('click', () => {
-                // Calculate the actual slide based on the dot position
-                const slideMultiplier = Math.floor(totalSlides / maxDots);
-                currentIndex = i * slideMultiplier;
+                const itemsPerGroup = Math.floor(totalSlides / maxDots);
+                currentIndex = i * itemsPerGroup;
                 updateSlidePosition();
                 updateDots();
             });
@@ -495,14 +492,12 @@
     function updateDots() {
         const dots = document.querySelectorAll('.cert-dot');
         const totalSlides = items.length;
-        const maxDots = 3;
-        const slideMultiplier = Math.floor(totalSlides / maxDots);
+        const maxDots = dots.length;
+        const itemsPerGroup = Math.floor(totalSlides / maxDots);
     
         dots.forEach((dot, index) => {
-            // Calculate the active state based on current index
-            const isActive = currentIndex >= index * slideMultiplier && 
-                             currentIndex < (index + 1) * slideMultiplier;
-    
+            const isActive = currentIndex >= index * itemsPerGroup && 
+                             currentIndex < (index + 1) * itemsPerGroup;
             dot.classList.toggle('active', isActive);
         });
     }
@@ -522,25 +517,20 @@
     }
     
     function updateSlidePosition() {
-        track.style.transform = `translateX(-${currentIndex * (track.offsetWidth / items.length)}px)`;
+        const itemWidth = items[0].offsetWidth + 20; // Include margin
+        track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
     }
     
-    // Initialize
     function initCertificationSlider() {
         createDots();
-    
-        // Auto slide every 5 seconds
         autoSlide = setInterval(slideNext, 5000);
     }
     
-    // Call initialization
-    initCertificationSlider();
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', initCertificationSlider);
     
     // Pause auto-sliding on hover
-    track.addEventListener('mouseenter', () => {
-        clearInterval(autoSlide);
-    });
-    
+    track.addEventListener('mouseenter', () => clearInterval(autoSlide));
     track.addEventListener('mouseleave', () => {
         autoSlide = setInterval(slideNext, 5000);
     });
@@ -550,11 +540,11 @@
     let touchEndX = 0;
     
     track.addEventListener('touchstart', (e) => {
-        touchStartX = e.touches.clientX;
+        touchStartX = e.touches[0].clientX;
     });
     
     track.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches.clientX;
+        touchEndX = e.changedTouches[0].clientX;
         handleSwipe();
     });
     
@@ -563,11 +553,7 @@
         const difference = touchStartX - touchEndX;
     
         if (Math.abs(difference) > swipeThreshold) {
-            if (difference > 0) {
-                slideNext();
-            } else {
-                slidePrev();
-            }
+            difference > 0 ? slideNext() : slidePrev();
         }
     }
 </script>
