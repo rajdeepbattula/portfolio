@@ -15,60 +15,17 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.1'
-          bundler-cache: true
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Prepare Jekyll Site
-        run: |
-          mkdir -p docs
-          mkdir -p docs/_config.yml
-          mkdir -p docs/assets/css
-          
-          # Create a basic Jekyll configuration if not exists
-          if [ ! -f docs/_config.yml ]; then
-            echo "title: Your Site Title" > docs/_config.yml
-            echo "description: Your site description" >> docs/_config.yml
-            echo "theme: jekyll-theme-minimal" >> docs/_config.yml
-          fi
-
-      - name: Copy project files
-        run: |
-          # Copy all relevant files to docs directory
-          cp -r index.html docs/
-          cp -r style.css docs/assets/css/
-          cp -r script.js docs/
-          cp -r images docs/
-
-      - name: Build Jekyll Site
-        run: |
-          cd docs
-          bundle install
-          bundle exec jekyll build
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: 'docs/_site'
-
   deploy:
-    needs: build
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
