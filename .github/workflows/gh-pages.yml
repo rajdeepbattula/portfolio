@@ -25,6 +25,12 @@ jobs:
         uses: actions/checkout@v3
       - name: Setup Pages
         uses: actions/configure-pages@v3
+      - name: Install sass
+        run: |
+          npm install -g sass
+      - name: Build and render CSS
+        run: |
+          sass assets/css/style.scss assets/css/style.css
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
@@ -32,6 +38,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
-      - name: Build and render CSS
-        run: |
-          sass assets/css/style.scss assets/css/style.css
