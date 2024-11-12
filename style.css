@@ -65,6 +65,27 @@ header h2 {
     font-size: 1.5em; /* Adjust this value to change icon size */
 }
 
+.nav-link.active {
+    color: #007bff !important;
+    font-weight: 500;
+}
+
+/* Optional: Add hover effect */
+.nav-link:hover {
+    color: #0056b3 !important;
+}
+
+/* Ensure proper spacing in mobile view */
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        padding: 1rem 0;
+    }
+    
+    .nav-item {
+        padding: 0.5rem 0;
+    }
+}
+
 .cert-slider {
     position: relative;
     overflow: hidden;
