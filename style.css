@@ -86,6 +86,21 @@ header h2 {
     }
 }
 
+.cert-item {
+    flex: 0 0 300px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.cert-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
 .cert-slider {
     position: relative;
     overflow: hidden;
@@ -154,21 +169,6 @@ header h2 {
     .cert-dot.active {
         transform: scale(1.1);
     }
-}
-
-.cert-item {
-    flex: 0 0 300px;
-    padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.cert-logo {
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
-    margin-bottom: 15px;
 }
 
 /* Footer styling */
