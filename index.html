@@ -201,6 +201,11 @@
     <div class="container">
         <h2 class="text-center mb-4">Certifications</h2>
         <div class="cert-slider">
+            <div>
+                <button class="cert-prev-btn" onclick="slidePrev()">
+                    <i class="fa fa-chevron-left"></i>
+                </button>
+            </div>
             <div class="cert-track">
                 <div class="cert-item">
                     <img src="images/datacamp-logo.png" alt="DataCamp" class="cert-logo">
@@ -323,18 +328,15 @@
                     <p>CITI Program</p>
                 </div>
             </div>
-            <div class="cert-controls">
-                <button class="cert-prev-btn">
-                    <i class="fas fa-chevron-left"></i>
+            <div>
+                <button class="cert-next-btn" onclick="slideNext()">
+                    <i class="fa fa-chevron-right"></i>
                 </button>
-                <div class="cert-dots-container">
-                    <div class="cert-dots">
-                        <!-- Dots will be added dynamically via JavaScript -->
-                    </div>
+            </div>
+            <div class="cert-dots-container">
+                <div class="cert-dots">
+                    <!-- Dots will be added dynamically via JavaScript -->
                 </div>
-                <button class="cert-next-btn">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
             </div>
         </div>
     </div>
@@ -462,11 +464,9 @@
     window.addEventListener('scroll', updateActiveNavItem);
 </script>
 <script>
-    const track = document.querySelector('.cert-track');
+   const track = document.querySelector('.cert-track');
     const items = document.querySelectorAll('.cert-item');
     const dotsContainer = document.querySelector('.cert-dots');
-    const prevBtn = document.querySelector('.cert-prev-btn');
-    const nextBtn = document.querySelector('.cert-next-btn');
     let currentIndex = 0;
     let autoSlide;
     
@@ -528,8 +528,6 @@
     function initCertificationSlider() {
         createDots();
         autoSlide = setInterval(slideNext, 5000);
-        prevBtn.addEventListener('click', slidePrev);
-        nextBtn.addEventListener('click', slideNext);
     }
     
     // Initialize on page load
