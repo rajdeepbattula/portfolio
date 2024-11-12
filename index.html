@@ -32,6 +32,9 @@
                     <a class="nav-link" href="#projects">Projects</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="#certifications">Certifications</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="#experience">Experience</a>
                 </li>
                 <li class="nav-item">
@@ -403,12 +406,52 @@
 <script src="quotes.js"></script>
 <script src="script.js"></script>
 <script>
-    document.querySelector('a[href="#contact"]').addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector('#contact').scrollIntoView({
-            behavior: 'smooth'
+    // Smooth scrolling for all navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const section = document.querySelector(this.getAttribute('href'));
+            const navHeight = document.querySelector('.navbar').offsetHeight;
+            const targetPosition = section.offsetTop - navHeight;
+    
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+    
+            // Close mobile menu if open
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            if (navbarCollapse.classList.contains('show')) {
+                navbarCollapse.classList.remove('show');
+            }
         });
     });
+    
+    // Add active state to navigation items
+    function updateActiveNavItem() {
+        const sections = document.querySelectorAll('section');
+        const navItems = document.querySelectorAll('.nav-link');
+        
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= sectionTop - 150) {
+                current = section.getAttribute('id');
+            }
+        });
+    
+        navItems.forEach(item => {
+            item.classList.remove('active');
+            if (item.getAttribute('href').slice(1) === current) {
+                item.classList.add('active');
+            }
+        });
+    }
+    
+    // Update active nav item on scroll
+    window.addEventListener('scroll', updateActiveNavItem);
 </script>
 <script>
     const track = document.querySelector('.cert-track');
