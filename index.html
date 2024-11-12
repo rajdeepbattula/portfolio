@@ -201,9 +201,6 @@
     <div class="container">
         <h2 class="text-center mb-4">Certifications</h2>
         <div class="cert-slider">
-            <button class="cert-prev-btn" onclick="slidePrev()">
-                <i class="fa fa-chevron-left"></i>
-            </button>
             <div class="cert-track">
                 <div class="cert-item">
                     <img src="images/datacamp-logo.png" alt="DataCamp" class="cert-logo">
@@ -326,13 +323,10 @@
                     <p>CITI Program</p>
                 </div>
             </div>
-            <button class="cert-next-btn" onclick="slideNext()">
-                <i class="fa fa-chevron-right"></i>
-            </button>
-        </div>
-        <div class="cert-dots-container">
-            <div class="cert-dots">
-                <!-- Dots will be added dynamically via JavaScript -->
+             <div class="cert-dots-container">
+                <div class="cert-dots">
+                    <!-- Dots will be added dynamically via JavaScript -->
+                </div>
             </div>
         </div>
     </div>
@@ -460,6 +454,7 @@
     window.addEventListener('scroll', updateActiveNavItem);
 </script>
 <script>
+   // Simplified JavaScript
     const track = document.querySelector('.cert-track');
     const items = document.querySelectorAll('.cert-item');
     const dotsContainer = document.querySelector('.cert-dots');
@@ -468,14 +463,13 @@
     
     function createDots() {
         const totalSlides = items.length;
-        const maxDots = Math.min(3, Math.ceil(totalSlides / 3));
+        const maxDots = Math.min(5, Math.ceil(totalSlides / 4)); // Show up to 5 dots
     
-        dotsContainer.innerHTML = ''; // Clear existing dots
+        dotsContainer.innerHTML = '';
     
         for (let i = 0; i < maxDots; i++) {
             const dot = document.createElement('span');
             dot.classList.add('cert-dot');
-    
             if (i === 0) dot.classList.add('active');
     
             dot.addEventListener('click', () => {
@@ -497,21 +491,13 @@
     
         dots.forEach((dot, index) => {
             const isActive = currentIndex >= index * itemsPerGroup && 
-                             currentIndex < (index + 1) * itemsPerGroup;
+                            currentIndex < (index + 1) * itemsPerGroup;
             dot.classList.toggle('active', isActive);
         });
     }
     
     function slideNext() {
-        const totalSlides = items.length;
-        currentIndex = (currentIndex + 1) % totalSlides;
-        updateSlidePosition();
-        updateDots();
-    }
-    
-    function slidePrev() {
-        const totalSlides = items.length;
-        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        currentIndex = (currentIndex + 1) % items.length;
         updateSlidePosition();
         updateDots();
     }
@@ -523,7 +509,7 @@
     
     function initCertificationSlider() {
         createDots();
-        autoSlide = setInterval(slideNext, 5000);
+        autoSlide = setInterval(slideNext, 3000); // Changed to 3 seconds for smoother transitions
     }
     
     // Initialize on page load
@@ -532,7 +518,7 @@
     // Pause auto-sliding on hover
     track.addEventListener('mouseenter', () => clearInterval(autoSlide));
     track.addEventListener('mouseleave', () => {
-        autoSlide = setInterval(slideNext, 5000);
+        autoSlide = setInterval(slideNext, 3000);
     });
     
     // Touch support
@@ -541,11 +527,13 @@
     
     track.addEventListener('touchstart', (e) => {
         touchStartX = e.touches[0].clientX;
+        clearInterval(autoSlide);
     });
     
     track.addEventListener('touchend', (e) => {
         touchEndX = e.changedTouches[0].clientX;
         handleSwipe();
+        autoSlide = setInterval(slideNext, 3000);
     });
     
     function handleSwipe() {
@@ -553,7 +541,13 @@
         const difference = touchStartX - touchEndX;
     
         if (Math.abs(difference) > swipeThreshold) {
-            difference > 0 ? slideNext() : slidePrev();
+            if (difference > 0) {
+                currentIndex = (currentIndex + 1) % items.length;
+            } else {
+                currentIndex = (currentIndex - 1 + items.length) % items.length;
+            }
+            updateSlidePosition();
+            updateDots();
         }
     }
 </script>
