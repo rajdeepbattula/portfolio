@@ -455,100 +455,24 @@
 <script>
     const track = document.querySelector('.cert-track');
     const items = document.querySelectorAll('.cert-item');
-    const dotsContainer = document.querySelector('.cert-dots');
     let currentIndex = 0;
-    let autoSlide;
-    
-    function createDots() {
-        const totalSlides = items.length;
-        const maxDots = Math.min(3, Math.ceil(totalSlides / 3));
-    
-        dotsContainer.innerHTML = ''; // Clear existing dots
-    
-        for (let i = 0; i < maxDots; i++) {
-            const dot = document.createElement('span');
-            dot.classList.add('cert-dot');
-    
-            if (i === 0) dot.classList.add('active');
-    
-            dot.addEventListener('click', () => {
-                const itemsPerGroup = Math.floor(totalSlides / maxDots);
-                currentIndex = i * itemsPerGroup;
-                updateSlidePosition();
-                updateDots();
-            });
-    
-            dotsContainer.appendChild(dot);
-        }
-    }
-    
-    function updateDots() {
-        const dots = document.querySelectorAll('.cert-dot');
-        const totalSlides = items.length;
-        const maxDots = dots.length;
-        const itemsPerGroup = Math.floor(totalSlides / maxDots);
-    
-        dots.forEach((dot, index) => {
-            const isActive = currentIndex >= index * itemsPerGroup && 
-                             currentIndex < (index + 1) * itemsPerGroup;
-            dot.classList.toggle('active', isActive);
-        });
-    }
-    
+
     function slideNext() {
-        const totalSlides = items.length;
-        currentIndex = (currentIndex + 1) % totalSlides;
+        currentIndex = (currentIndex + 1) % (items.length - 2);
         updateSlidePosition();
-        updateDots();
     }
-    
+
     function slidePrev() {
-        const totalSlides = items.length;
-        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        currentIndex = (currentIndex - 1 + items.length - 2) % (items.length - 2);
         updateSlidePosition();
-        updateDots();
     }
-    
+
     function updateSlidePosition() {
-        const itemWidth = items[0].offsetWidth + 20; // Include margin
-        track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+        track.style.transform = `translateX(-${currentIndex * 320}px)`;
     }
-    
-    function initCertificationSlider() {
-        createDots();
-        autoSlide = setInterval(slideNext, 5000);
-    }
-    
-    // Initialize on page load
-    document.addEventListener('DOMContentLoaded', initCertificationSlider);
-    
-    // Pause auto-sliding on hover
-    track.addEventListener('mouseenter', () => clearInterval(autoSlide));
-    track.addEventListener('mouseleave', () => {
-        autoSlide = setInterval(slideNext, 5000);
-    });
-    
-    // Touch support
-    let touchStartX = 0;
-    let touchEndX = 0;
-    
-    track.addEventListener('touchstart', (e) => {
-        touchStartX = e.touches[0].clientX;
-    });
-    
-    track.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].clientX;
-        handleSwipe();
-    });
-    
-    function handleSwipe() {
-        const swipeThreshold = 50;
-        const difference = touchStartX - touchEndX;
-    
-        if (Math.abs(difference) > swipeThreshold) {
-            difference > 0 ? slideNext() : slidePrev();
-        }
-    }
+
+    // Auto slide every 5 seconds
+    setInterval(slideNext, 5000);
 </script>
 </body>
 </html>
