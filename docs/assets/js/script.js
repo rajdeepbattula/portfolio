@@ -25,228 +25,202 @@ function displayRandomQuote() {
 
 // Call the function when the page loads
 window.onload = displayRandomQuote;
+// Certification data
+const certifications = [
+    {
+        logo: "images/datacamp-logo.png",
+        title: "Data Scientist Associate",
+        provider: "DataCamp"
+    },
+    {
+        logo: "images/datacamp-logo.png",
+        title: "Data Engineer",
+        provider: "DataCamp"
+    },
+    {
+        logo: "images/datacamp-logo.png",
+        title: "SQL Associate",
+        provider: "DataCamp"
+    },
+    {
+        logo: "images/datacamp-logo.png",
+        title: "Data Engineer Associate",
+        provider: "DataCamp"
+    },
+    {
+        logo: "images/datacamp-logo.png",
+        title: "Data Analyst Associate",
+        provider: "DataCamp"
+    },
+    {
+        logo: "images/microsoft-linkedin-logo.png",
+        title: "Career Essentials in Project Management",
+        provider: "Microsoft and LinkedIn"
+    },
+    {
+        logo: "images/microsoft-linkedin-logo.png",
+        title: "Career Essentials in Data Analysis",
+        provider: "Microsoft and LinkedIn"
+    },
+    {
+        logo: "images/hackerrank-logo.png",
+        title: "Software Engineer",
+        provider: "HackerRank"
+    },
+    {
+        logo: "images/hackerrank-logo.png",
+        title: "Frontend Developer",
+        provider: "HackerRank"
+    },
+    {
+        logo: "images/hackerrank-logo.png",
+        title: "Problem Solving",
+        provider: "HackerRank"
+    },
+    {
+        logo: "images/hackerrank-logo.png",
+        title: "SQL (Advanced)",
+        provider: "HackerRank"
+    },
+    {
+        logo: "images/project-management-institute-logo.png",
+        title: "Project Management Foundations",
+        provider: "Project Management Institute"
+    },
+    {
+        logo: "images/infosys-logo.png",
+        title: "Python for Data Science",
+        provider: "Infosys"
+    },
+    {
+        logo: "images/infosys-logo.png",
+        title: "Essentials Of Cloud Computing",
+        provider: "Infosys"
+    },
+    {
+        logo: "images/linkedin-logo.png",
+        title: "Learning the R Tidyverse",
+        provider: "LinkedIn"
+    },
+    {
+        logo: "images/linkedin-logo.png",
+        title: "Introduction to Career Skills in Data Analytics",
+        provider: "LinkedIn"
+    },
+    {
+        logo: "images/linkedin-logo.png",
+        title: "Data Analytics: Extending and Applying Core Knowledge",
+        provider: "LinkedIn"
+    },
+    {
+        logo: "images/linkedin-logo.png",
+        title: "Data Analytics: Foundations",
+        provider: "LinkedIn"
+    },
+    {
+        logo: "images/project-management-institute-logo.png",
+        title: "Managing Projects with Microsoft 365",
+        provider: "Project Management Institute"
+    },
+    {
+        logo: "images/project-management-institute-logo.png",
+        title: "Managing Project Stakeholders",
+        provider: "Project Management Institute"
+    },
+    {
+        logo: "images/linkedin-logo.png",
+        title: "Collaborating with Microsoft 365",
+        provider: "LinkedIn"
+    },
+    {
+        logo: "images/linkedin-logo.png",
+        title: "Optimizing Your Work with Microsoft 365",
+        provider: "LinkedIn"
+    },
+    {
+        logo: "images/citi-program-logo.png",
+        title: "Social/Behavioral Researchers",
+        provider: "CITI Program"
+    },
+    {
+        logo: "images/citi-program-logo.png",
+        title: "Social and Behavioral Responsible Conduct of Research",
+        provider: "CITI Program"
+    }
+];
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Certification data
-    const certifications = [
-        {
-            logo: "/portfolio/images/datacamp-logo.png",
-            title: "Data Scientist Associate",
-            provider: "DataCamp"
-        },
-        {
-            logo: "/portfolio/images/datacamp-logo.png",
-            title: "Data Engineer",
-            provider: "DataCamp"
-        },
-        {
-            logo: "/portfolio/images/datacamp-logo.png",
-            title: "SQL Associate",
-            provider: "DataCamp"
-        },
-        {
-            logo: "/portfolio/images/datacamp-logo.png",
-            title: "Data Engineer Associate",
-            provider: "DataCamp"
-        },
-        {
-            logo: "/portfolio/images/datacamp-logo.png",
-            title: "Data Analyst Associate",
-            provider: "DataCamp"
-        },
-        {
-            logo: "/portfolio/images/microsoft-linkedin-logo.png",
-            title: "Career Essentials in Project Management",
-            provider: "Microsoft and LinkedIn"
-        },
-        {
-            logo: "/portfolio/images/microsoft-linkedin-logo.png",
-            title: "Career Essentials in Data Analysis",
-            provider: "Microsoft and LinkedIn"
-        },
-        {
-            logo: "/portfolio/images/hackerrank-logo.png",
-            title: "Software Engineer",
-            provider: "HackerRank"
-        },
-        {
-            logo: "/portfolio/images/hackerrank-logo.png",
-            title: "Frontend Developer",
-            provider: "HackerRank"
-        },
-        {
-            logo: "/portfolio/images/hackerrank-logo.png",
-            title: "Problem Solving",
-            provider: "HackerRank"
-        },
-        {
-            logo: "/portfolio/images/hackerrank-logo.png",
-            title: "SQL (Advanced)",
-            provider: "HackerRank"
-        },
-        {
-            logo: "/portfolio/images/project-management-institute-logo.png",
-            title: "Project Management Foundations",
-            provider: "Project Management Institute"
-        },
-        {
-            logo: "/portfolio/images/infosys-logo.png",
-            title: "Python for Data Science",
-            provider: "Infosys"
-        },
-        {
-            logo: "/portfolio/images/infosys-logo.png",
-            title: "Essentials Of Cloud Computing",
-            provider: "Infosys"
-        },
-        {
-            logo: "/portfolio/images/linkedin-logo.png",
-            title: "Learning the R Tidyverse",
-            provider: "LinkedIn"
-        },
-        {
-            logo: "/portfolio/images/linkedin-logo.png",
-            title: "Introduction to Career Skills in Data Analytics",
-            provider: "LinkedIn"
-        },
-        {
-            logo: "/portfolio/images/linkedin-logo.png",
-            title: "Data Analytics: Extending and Applying Core Knowledge",
-            provider: "LinkedIn"
-        },
-        {
-            logo: "/portfolio/images/linkedin-logo.png",
-            title: "Data Analytics: Foundations",
-            provider: "LinkedIn"
-        },
-        {
-            logo: "/portfolio/images/project-management-institute-logo.png",
-            title: "Managing Projects with Microsoft 365",
-            provider: "Project Management Institute"
-        },
-        {
-            logo: "/portfolio/images/project-management-institute-logo.png",
-            title: "Managing Project Stakeholders",
-            provider: "Project Management Institute"
-        },
-        {
-            logo: "/portfolio/images/linkedin-logo.png",
-            title: "Collaborating with Microsoft 365",
-            provider: "LinkedIn"
-        },
-        {
-            logo: "/portfolio/images/linkedin-logo.png",
-            title: "Optimizing Your Work with Microsoft 365",
-            provider: "LinkedIn"
-        },
-        {
-            logo: "/portfolio/images/citi-program-logo.png",
-            title: "Social/Behavioral Researchers",
-            provider: "CITI Program"
-        },
-        {
-            logo: "/portfolio/images/citi-program-logo.png",
-            title: "Social and Behavioral Responsible Conduct of Research",
-            provider: "CITI Program"
-        }
-    ];
+// Slideshow functionality
+class CertificationSlideshow {
+    constructor(certifications) {
+        this.certifications = certifications;
+        this.currentIndex = 0;
+        this.track = document.getElementById('certTrack');
+        this.prevBtn = document.querySelector('.cert-prev-btn');
+        this.nextBtn = document.querySelector('.cert-next-btn');
 
-    // Create certification items
-    const track = document.querySelector('.cert-track');
-    certifications.forEach(cert => {
-        const certItem = document.createElement('div');
-        certItem.className = 'cert-item';
-        certItem.innerHTML = `
-            <img src="${cert.logo}" alt="${cert.provider}" class="cert-logo">
-            <h5>${cert.title}</h5>
-            <p>${cert.provider}</p>
-        `;
-        track.appendChild(certItem);
-    });
-
-    // Slideshow functionality
-    let currentSlide = 0;
-    const items = document.querySelectorAll('.cert-item');
-    const dotsContainer = document.querySelector('.cert-dots');
-    const itemsPerView = window.innerWidth <= 768 ? 1 : 3;
-    const maxSlides = Math.ceil(items.length / itemsPerView);
-
-    // Create dots
-    for (let i = 0; i < maxSlides; i++) {
-        const dot = document.createElement('span');
-        dot.className = 'cert-dot' + (i === 0 ? ' active' : '');
-        dot.addEventListener('click', () => goToSlide(i));
-        dotsContainer.appendChild(dot);
+        this.renderCertifications();
+        this.addEventListeners();
     }
 
-    function updateSlidePosition() {
-        const itemWidth = items.offsetWidth + 20; // Including gap
-        track.style.transform = `translateX(-${currentSlide * itemWidth * itemsPerView}px)`;
-        
-        // Update dots
-        document.querySelectorAll('.cert-dot').forEach((dot, index) => {
-            dot.classList.toggle('active', index === currentSlide);
+    renderCertifications() {
+        // Clear existing items
+        this.track.innerHTML = '';
+
+        // Render visible certifications
+        const visibleCerts = this.getVisibleCertifications();
+        visibleCerts.forEach(cert => {
+            const certItem = document.createElement('div');
+            certItem.className = 'cert-item';
+            certItem.innerHTML = `
+                <img src="${cert.logo}" alt="${cert.provider}" class="cert-logo">
+                <h5>${cert.title}</h5>
+                <p>${cert.provider}</p>
+            `;
+            this.track.appendChild(certItem);
+        });
+
+        // Add dots
+        const dotsContainer = document.querySelector('.cert-dots');
+        dotsContainer.innerHTML = '';
+        this.certifications.forEach((cert, index) => {
+            const dot = document.createElement('div');
+            dot.className = 'cert-dot' + (index === this.currentIndex ? ' active' : '');
+            dotsContainer.appendChild(dot);
         });
     }
 
-    function goToSlide(index) {
-        currentSlide = index;
-        updateSlidePosition();
+    getVisibleCertifications() {
+        const itemsToShow = window.innerWidth <= 768 ? 1 : 3;
+        const startIndex = this.currentIndex;
+        const endIndex = startIndex + itemsToShow;
+        
+        return this.certifications.slice(startIndex, endIndex);
     }
 
-    window.slideNext = function() {
-        currentSlide = (currentSlide + 1) % maxSlides;
-        updateSlidePosition();
+    addEventListeners() {
+        this.prevBtn.addEventListener('click', () => this.showPrevious());
+        this.nextBtn.addEventListener('click', () => this.showNext());
+
+        // Responsive adjustment
+        window.addEventListener('resize', () => this.renderCertifications());
     }
 
-    window.slidePrev = function() {
-        currentSlide = (currentSlide - 1 + maxSlides) % maxSlides;
-        updateSlidePosition();
-    }
-
-    // Auto-slide
-    let slideInterval = setInterval(slideNext, 5000);
-
-    // Pause on hover
-    track.addEventListener('mouseenter', () => clearInterval(slideInterval));
-    track.addEventListener('mouseleave', () => {
-        slideInterval = setInterval(slideNext, 5000);
-    });
-
-    // Touch support
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    track.addEventListener('touchstart', e => {
-        touchStartX = e.touches.clientX;
-    });
-
-    track.addEventListener('touchend', e => {
-        touchEndX = e.changedTouches.clientX;
-        handleSwipe();
-    });
-
-    function handleSwipe() {
-        const swipeThreshold = 50;
-        const difference = touchStartX - touchEndX;
-
-        if (Math.abs(difference) > swipeThreshold) {
-            if (difference > 0) {
-                slideNext();
-            } else {
-                slidePrev();
-            }
+    showNext() {
+        if (this.currentIndex + 3 < this.certifications.length) {
+            this.currentIndex++;
+            this.renderCertifications();
         }
     }
 
-    // Initial position
-    updateSlidePosition();
-
-    // Update on window resize
-    window.addEventListener('resize', () => {
-        const newItemsPerView = window.innerWidth <= 768 ? 1 : 3;
-        if (newItemsPerView !== itemsPerView) {
-            location.reload();
+    showPrevious() {
+        if (this.currentIndex > 0) {
+            this.currentIndex--;
+            this.renderCertifications();
         }
-    });
+    }
+}
+
+// Initialize Slideshow
+document.addEventListener('DOMContentLoaded', () => {
+    new CertificationSlideshow(certifications);
 });
