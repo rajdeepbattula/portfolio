@@ -1,0 +1,20 @@
+title: Your Site Title
+description: Your site description
+theme: jekyll-theme-primer
+
+# Build settings
+source: .
+destination: ./_site
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-github-metadata
+
+# Markdown settings
+markdown: kramdown
+
+# Sass settings
+sass:
+  style: compressed
+  source_dir: assets/css
