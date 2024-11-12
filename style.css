@@ -105,26 +105,22 @@ header h2 {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: transparent;
-    color: #fff;
+    background-color: rgba(0, 123, 255, 0.7);
+    color: white;
     border: none;
     padding: 10px 15px;
-    font-size: 18px;
+    font-size: 24px;
     cursor: pointer;
     z-index: 10;
     transition: background-color 0.3s ease;
 }
 
 .cert-prev-btn {
-    left: 0;
+    left: 10px;
 }
 
 .cert-next-btn {
-    right: 0;
-}
-
-.cert-prev-btn:hover, .cert-next-btn:hover {
-    background-color: rgba(0, 123, 255, 0.7);
+    right: 10px;
 }
 
 .cert-track {
