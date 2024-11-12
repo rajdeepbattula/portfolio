@@ -468,18 +468,18 @@
     
     // Create dots with limited visibility
     function createDots() {
-        const totalSlides = items.length - 2;
+        const totalSlides = items.length;
         const maxDots = 3;
-        
+    
         dotsContainer.innerHTML = ''; // Clear existing dots
-        
+    
         for (let i = 0; i < maxDots; i++) {
             const dot = document.createElement('span');
             dot.classList.add('cert-dot');
-            
+    
             // Add active state to first dot initially
             if (i === 0) dot.classList.add('active');
-            
+    
             dot.addEventListener('click', () => {
                 // Calculate the actual slide based on the dot position
                 const slideMultiplier = Math.floor(totalSlides / maxDots);
@@ -487,48 +487,48 @@
                 updateSlidePosition();
                 updateDots();
             });
-            
+    
             dotsContainer.appendChild(dot);
         }
     }
     
     function updateDots() {
         const dots = document.querySelectorAll('.cert-dot');
-        const totalSlides = items.length - 2;
+        const totalSlides = items.length;
         const maxDots = 3;
         const slideMultiplier = Math.floor(totalSlides / maxDots);
-        
+    
         dots.forEach((dot, index) => {
             // Calculate the active state based on current index
             const isActive = currentIndex >= index * slideMultiplier && 
                              currentIndex < (index + 1) * slideMultiplier;
-            
+    
             dot.classList.toggle('active', isActive);
         });
     }
     
     function slideNext() {
-        const totalSlides = items.length - 2;
+        const totalSlides = items.length;
         currentIndex = (currentIndex + 1) % totalSlides;
         updateSlidePosition();
         updateDots();
     }
     
     function slidePrev() {
-        const totalSlides = items.length - 2;
+        const totalSlides = items.length;
         currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
         updateSlidePosition();
         updateDots();
     }
     
     function updateSlidePosition() {
-        track.style.transform = `translateX(-${currentIndex * 320}px)`;
+        track.style.transform = `translateX(-${currentIndex * (track.offsetWidth / items.length)}px)`;
     }
     
     // Initialize
     function initCertificationSlider() {
         createDots();
-        
+    
         // Auto slide every 5 seconds
         autoSlide = setInterval(slideNext, 5000);
     }
@@ -550,11 +550,11 @@
     let touchEndX = 0;
     
     track.addEventListener('touchstart', (e) => {
-        touchStartX = e.touches[0].clientX;
+        touchStartX = e.touches.clientX;
     });
     
     track.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].clientX;
+        touchEndX = e.changedTouches.clientX;
         handleSwipe();
     });
     
