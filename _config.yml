@@ -1,7 +1,7 @@
 # _config.yml
 title: Bala Battula
 description: Portfolio website
-theme: jekyll-theme-minimal
+theme: jekyll-theme-primer
 
 name: Deploy GitHub Pages
 
