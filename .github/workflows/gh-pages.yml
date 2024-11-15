@@ -1,37 +1,40 @@
-name: Deploy GitHub Pages
+name: Jekyll Build and Deploy
 
-on:
-  push:
-    branches: ["main"]
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+on: [push]
 
 jobs:
-  deploy:
-    environment: 
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-      
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+      - uses: actions/checkout@v3
+      - uses: ruby/setup-ruby@v1
         with:
-          path: '.'
-      
+          ruby-version: '2.7.4'
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+      - run: bundle exec jekyll build
+      - uses: actions/upload-pages-artifact@v1
+        with:
+          path: "_site/"
+
+  deploy:
+    # Add a dependency to the build job
+    needs: build
+    if: github.ref == 'refs/heads/master' # Only deploys on master
+
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+
+    # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    # Specify runner + deployment step
+    runs-on: ubuntu-latest
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
